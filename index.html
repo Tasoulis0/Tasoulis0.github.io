@@ -8,15 +8,28 @@
 
     <style>
 
-    button {
-            width: 10cm;
-            height: 3cm;
-            border:thick;
-            border-style:dashed;
-            border-color: gold;
-            font-size: 1.5em;
-            cursor: pointer;
+        img {
+            width: 100%;
+            max-width: 100%; /* Ensure it doesn't stretch beyond its original size */
+            height: auto; /* Maintain aspect ratio */
         }
+
+        .container {
+            width: 100%; /* Container width can be adjusted if needed */
+            max-width: 500px; /* Set a max-width for the container */
+            margin: 0 auto; /* Center the container */
+        }
+
+
+        button {
+                width: 10cm;
+                height: 3cm;
+                border:thick;
+                border-style:dashed;
+                border-color: gold;
+                font-size: 1.5em;
+                cursor: pointer;
+            }
 
         .text-center {
             text-align: center;
@@ -36,11 +49,11 @@
         </button>
     </div>
 
-    <div id="output"  style="display: none; text-align: center;">
+    <div clas="container" id="output"  style="display: none; text-align: center;">
 
         <p> KANO DOKIMES AUYTO TO KEIMENTO THA AUTOKATASTEFEI SE 100 DEUTEROLEPTA THANKS MAGKES FOR THE SAPRSO</p>
         
-        <img src="./files/e-circle.png" alt="description" style="position: static;">
+        <img  src="./files/e-circle.png" alt="description" style="position: static;">
         <br>
         <button style="background-color: rgb(254, 0, 21); width: 10cm; height: 3cm;" name="WRONG" onclick="SetCount(-1)">
             <h1>CHOICE 1</h1>
