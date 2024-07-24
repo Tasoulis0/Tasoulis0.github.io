@@ -61,6 +61,11 @@ document.getElementById("myButton").addEventListener("click", function() {
 
     const offset = (screenWidth / 2.0) - inputWidth - 5;
 
+    if (offset < 0){
+
+        offset = (screenWidth - inputWidth ) / 2.0;
+    }
+
     result.textContent = `offset:${offset}  sreenwidth:${screenWidth} inputWidth:${inputWidth}`;
     
     
