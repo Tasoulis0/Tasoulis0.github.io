@@ -1,0 +1,56 @@
+
+:root {
+    --transform: translateX(-100px); /*Moves the button 100px to the left */
+  }
+
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    background: linear-gradient(to left, #c75d43, #4324c0);
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background: linear-gradient(to left, #450e7c, #1f0b6e);
+    color: white;
+    border: none;
+    border-radius: 10px; /* Makes the button round */
+    cursor: pointer;
+    box-shadow: 4px 6px 6px rgba(0, 0, 0, 0.3); /* Adds shadow */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+    
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+button:hover{
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+    
+}
+
+
+.move-left {
+    transform: var(--transform);
+    transition: transform 0.5s ease-in-out; /* Adds a smooth transition */
+}
+
+
