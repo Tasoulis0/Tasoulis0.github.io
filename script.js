@@ -63,6 +63,8 @@ document.getElementById("myButton").addEventListener("click", function() {
 
     if (offset < 0){
 
+        result.textContent = "ola gooof";
+
         offset = (screenWidth - inputWidth ) / 2.0;
     }
 
