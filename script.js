@@ -62,6 +62,8 @@ document.getElementById("myButton").addEventListener("click", function() {
 
     const offset = (screenWidth / 2 ) - inputWidth - 5; 
 
+    result.textContent = offset;
+    
     document.documentElement.style.setProperty('--transform', `translateX(-${offset}px)`);
 
     
