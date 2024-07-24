@@ -46,7 +46,7 @@ function displayWeatherInfo(data){
     const {name: city ,
            main:{temp,humidity}} = data;
 
-    result.textContent = temp;
+    result.textContent += temp;
 
     console.log(data);
     
@@ -59,14 +59,14 @@ document.getElementById("myButton").addEventListener("click", function() {
 
     const inputWidth = document.getElementById("city").offsetWidth;
 
-    const offset = (screenWidth / 2.0) - inputWidth - 5;
+    var offset = (screenWidth / 2.0) - inputWidth - 5;
 
     if (offset < 0){
 
         offset = (screenWidth - inputWidth ) / 2.0;
     }
 
-    result.textContent = `offset:${offset}  sreenwidth:${screenWidth} inputWidth:${inputWidth}`;
+    result.textContent = `offset:${offset}  sreenwidth:${screenWidth} inputWidth:${inputWidth}   `;
     
     
     document.documentElement.style.setProperty('--transform', `translateX(-${offset}px)`);
