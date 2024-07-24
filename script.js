@@ -52,12 +52,12 @@ function displayWeatherInfo(data){
     
 }
 
+const screenWidth = window.innerWidth;
+
+const inputWidth = document.getElementById("city").offsetWidth;
+
 
 document.getElementById("myButton").addEventListener("click", function() {
-
-    const screenWidth = window.innerWidth;
-
-    const inputWidth = document.getElementById("city").offsetWidth;
 
     var offset = (screenWidth / 2.0) - inputWidth - 5;
 
@@ -68,7 +68,7 @@ document.getElementById("myButton").addEventListener("click", function() {
         offset = (screenWidth - inputWidth ) / 2.0;
     }
 
-    result.textContent = `offset:${offset}  sreenwidth:${screenWidth} inputWidth:${inputWidth}   `;
+    result.textContent = `offset:${offset}  screen-width:${screenWidth} inputWidth:${inputWidth}   `;
     
     
     document.documentElement.style.setProperty('--transform', `translateX(-${offset}px)`);
@@ -76,4 +76,20 @@ document.getElementById("myButton").addEventListener("click", function() {
     
     document.getElementById("weather-form").classList.add("move-left");
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const img1 = document.getElementById("image1");
+    const img2 = document.getElementById("image2");
+
+
+
+    img1.style.width = `${screenWidth / 2 - 10}px`;
+    img2.style.width = `${screenWidth / 2 - 10}px`;
+
+
+    console.log(screenWidth / 2);
+
+});
+
 

@@ -31,16 +31,32 @@ button {
     border-radius: 10px; /* Makes the button round */
     cursor: pointer;
     box-shadow: 4px 6px 6px rgba(0, 0, 0, 0.3); /* Adds shadow */
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-
-    
+    transition: box-shadow 0.3s ease, transform 0.3s ease; 
 }
+
+.image-container {
+    display: flex;
+    position: absolute;
+    height: auto; /* Maintain aspect ratio */ 
+    z-index: -1; /* Place behind other content */
+}
+
+
+
+.myImg {
+    flex: 1; /* Ensure images grow and shrink as needed */
+    width: 50%; /* Each image takes up 50% of the container's width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure images cover their container */
+}
+
+
 
 #result {
     margin-top: 20px;
     font-size: 18px;
 }
-
+ 
 button:hover{
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
     transform: translateY(-2px); /* Slight lift on hover */
