@@ -59,9 +59,10 @@ document.getElementById("myButton").addEventListener("click", function() {
 
     const inputWidth = document.getElementById("city").offsetWidth;
 
-    const offset = ((screenWidth - inputWidth) / 2.0 ) - 5 ;
+    const offset = (screenWidth / 2.0) - inputWidth - 5;
 
-    result.textContent = offset;
+    result.textContent = `offset:${offset}  sreenwidth:${screenWidth} inputWidth:${inputWidth}`;
+    
     
     document.documentElement.style.setProperty('--transform', `translateX(-${offset}px)`);
 
