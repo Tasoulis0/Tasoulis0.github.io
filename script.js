@@ -59,8 +59,7 @@ document.getElementById("myButton").addEventListener("click", function() {
 
     const inputWidth = document.getElementById("city").offsetWidth;
 
-
-    const offset = (screenWidth / 2 ) - inputWidth - 5; 
+    const offset = ((screenWidth - inputWidth) / 2.0 ) - 5 ;
 
     result.textContent = offset;
     
