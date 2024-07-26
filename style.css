@@ -41,7 +41,7 @@ button {
     flex-wrap: nowrap; /* Prevent wrapping */
     width: 100vw; /* Full width of the viewport */
     height: 100vh; /* Full height of the viewport */
-    position: relative; /* Changed from absolute to relative */
+    position: absolute; /* Changed from absolute to relative */
     z-index: -1;
     overflow: hidden; /* Prevent overflow */
 }
