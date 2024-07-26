@@ -76,8 +76,7 @@ document.getElementById("myButton").addEventListener("click", function() {
     
     document.getElementById("weather-form").classList.add("move-left");
 });
-
-
+/*
 document.addEventListener("DOMContentLoaded", function() {
     const img1 = document.getElementById("image1");
     const img2 = document.getElementById("image2");
@@ -92,4 +91,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
+*/
 

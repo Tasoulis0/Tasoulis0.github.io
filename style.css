@@ -1,14 +1,13 @@
-
 :root {
-    --transform: translateX(-100px); /*Moves the button 100px to the left */
-  }
-
+    --transform: translateX(-100px); /* Moves the button 100px to the left */
+}
 
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    margin-top: 50px;
+    margin: 0;
     background: linear-gradient(to left, #c75d43, #4324c0);
+    overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 form {
@@ -35,38 +34,51 @@ button {
 }
 
 .image-container {
+    margin: 0;
     display: flex;
-    position: absolute;
-    height: auto; /* Maintain aspect ratio */ 
-    z-index: -1; /* Place behind other content */
+    justify-content: center; /* Center images horizontally */
+    align-items: center; /* Center images vertically */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    position: relative; /* Changed from absolute to relative */
+    z-index: -1;
+    overflow: hidden; /* Prevent overflow */
 }
-
-
 
 .myImg {
-    flex: 1; /* Ensure images grow and shrink as needed */
-    width: 50%; /* Each image takes up 50% of the container's width */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Ensure images cover their container */
+    width: 100%; /* Ensure images fit the full width of the container */
+    height: 100%; /* Ensure images fit the full height of the container */
+    object-fit: fill; /* Fill the entire area, allowing distortion */
+    
 }
-
-
 
 #result {
     margin-top: 20px;
     font-size: 18px;
 }
- 
-button:hover{
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
-    transform: translateY(-2px); /* Slight lift on hover */
-    
-}
 
+button:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+    transform: translateY(-4px); /* Slight lift on hover */
+}
 
 .move-left {
     transform: var(--transform);
     transition: transform 0.5s ease-in-out; /* Adds a smooth transition */
 }
 
+/* Media query for smaller screens */
+@media (max-width: 800px) {
+    .image-container {
+        flex-direction: column; /* Stack images vertically */
+        align-items: center; /* Center images */
+        height: auto; /* Adjust height for stacked images */
+    }
 
+    .myImg {
+        width: 100vw; /* Ensure images fit the full width of the viewport */
+        height: auto; /* Ensure images maintain aspect ratio */
+        object-fit: fill; /* Fill the entire area, allowing distortion */
+    }
+}
