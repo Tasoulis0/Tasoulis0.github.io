@@ -78,16 +78,16 @@ button {
 }
 
 
-button:hover {
+button:hover , button:focus{
     box-shadow: 0 8px 30px rgb(0, 0, 0); /* Darker shadow on hover */
     transform: translateY(-4px); /* Slight lift on hover */
 }
 
-.higherButton:hover {
+.higherButton:hover , .higherButton:focus{
     box-shadow: 0 8px 30px rgb(4, 105, 6);
 }
 
-.lowerButton:hover {
+.lowerButton:hover , .lowerButton:focus{
     box-shadow: 0 8px 30px rgb(91, 9, 9);
 }
 
