@@ -29,7 +29,7 @@ input {
 button {
     padding: 10px 20px;
     margin-bottom: 10px;
-    font-size: 2rem;
+    font-size: 4rem;
     font-weight: bolder;
     font-family: Georgia, 'Times New Roman', Times, serif;
     background: linear-gradient(to left, #450e7c, #1f0b6e);
@@ -58,8 +58,9 @@ button {
 .buttons-container{
     display: flex;
     align-items: center;
+    justify-content: center; /* Center images horizontally */
+    min-height: 100vh; /* Full height of the viewport */
     margin: 20px;
-    
     flex-direction: column;
 }
 
