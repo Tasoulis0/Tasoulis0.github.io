@@ -20,9 +20,10 @@ body{
 
 
 button {
-    padding: 10px 20px;
+
+    padding: 2vh 5vw; /* Padding adjusts based on viewport size */
+    font-size: 3vw;   /* Font size adjusts based on viewport width */
     margin-bottom: 10px;
-    font-size: 4rem;
     font-weight: bolder;
     font-family: Georgia, 'Times New Roman', Times, serif;
     background: linear-gradient(to left, #450e7c, #1f0b6e);
