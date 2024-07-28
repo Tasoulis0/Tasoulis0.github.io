@@ -13,7 +13,7 @@ body{
     text-align: center;
     margin: 0px;
     padding: 0px;
-    background: linear-gradient(to left, #c75d43, #4324c0);
+    background: linear-gradient(to left, #380984, #0c0238);
     overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
@@ -95,7 +95,8 @@ button.touch {
 
 .move-left {
     transform: var(--transform);
-    transition: transform 0.5s ease-in-out; /* Adds a smooth transition */
+    opacity: 0;
+    transition: opacity 2s ,transform 1.3s ease-in-out; /* Adds a smooth transition */
 }
 
 /* Media query for smaller screens */
