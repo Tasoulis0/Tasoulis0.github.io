@@ -17,14 +17,7 @@ body{
     overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
-form {
-    margin-bottom: 20px;
-}
 
-input {
-    padding: 10px;
-    font-size: 1em;
-}
 
 button {
     padding: 10px 20px;
@@ -54,13 +47,15 @@ button {
     z-index: -1;
     overflow: hidden; /* Prevent overflow */
 }
+h1 {
+    margin-bottom: 0; /* Remove bottom margin */
+}
 
 .buttons-container{
     display: flex;
-    align-items: center;
-    justify-content: center; /* Center images horizontally */
-    min-height: 100vh; /* Full height of the viewport */
-    margin: 20px;
+    align-items:center;
+    justify-content:end; /* Center images horizontally */
+    min-height: 96vh;
     flex-direction: column;
 }
 
