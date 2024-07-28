@@ -1,5 +1,5 @@
 const screenWidth = window.innerWidth;
-
+const screenHeight = window.innerHeight;
 
 
 
@@ -16,9 +16,13 @@ document.getElementById("button1").addEventListener("click", function() {
 
     result.textContent = `offset:${offset}  screen-width:${screenWidth}   `;
     
-    
-    document.documentElement.style.setProperty('--transform', `translateX(-${offset+10}px)`);
-    
+    if(screenWidth > 800){
+        document.documentElement.style.setProperty('--transform', `translateX(-${(screenWidth/2.0)+10}px)`);
+    }
+    else{
+        document.documentElement.style.setProperty('--transform', `translateY(-${(screenHeight/2.0)+10}px)`);
+        
+    }
     
     document.getElementById("image2").classList.add("move-left");
 
