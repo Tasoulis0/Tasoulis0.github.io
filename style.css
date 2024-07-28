@@ -2,10 +2,17 @@
     --transform: translateX(-100px); /* Moves the button 100px to the left */
 }
 
-body {
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
     font-family: Arial, sans-serif;
     text-align: center;
-    margin: 0;
+    margin: 0px;
+    padding: 0px;
     background: linear-gradient(to left, #c75d43, #4324c0);
     overflow-x: hidden; /* Prevent horizontal overflow */
 }
@@ -16,7 +23,7 @@ form {
 
 input {
     padding: 10px;
-    font-size: 16px;
+    font-size: 1em;
 }
 
 button {
@@ -34,7 +41,8 @@ button {
 }
 
 .image-container {
-    margin: 0;
+    flex-direction: row; /* Stack images vertically */
+    margin: auto;
     display: flex;
     justify-content: center; /* Center images horizontally */
     align-items: center; /* Center images vertically */
@@ -50,6 +58,7 @@ button {
     width: 100%; /* Ensure images fit the full width of the container */
     height: 100%; /* Ensure images fit the full height of the container */
     object-fit: fill; /* Fill the entire area, allowing distortion */
+    margin: 5px;
     
 }
 
