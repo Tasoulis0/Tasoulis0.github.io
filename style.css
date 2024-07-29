@@ -17,12 +17,21 @@ body{
     overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
+img {
+    filter: brightness(50%); /* Make images darker */
+    transition: filter 0.3s; /* Smooth transition for the hover effect */
+}
+
+img:hover {
+    filter: brightness(100%); /* Make images brighter on hover */
+}
 
 
-button {
 
-    padding: 2vh 5vw; /* Padding adjusts based on viewport size */
-    font-size: 3vw;   /* Font size adjusts based on viewport width */
+ button {
+
+    padding: 4vh 8vw; /* Padding adjusts based on viewport size */
+    font-size: 5vw;   /* Font size adjusts based on viewport width */
     margin-bottom: 10px;
     font-weight: bolder;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -33,6 +42,7 @@ button {
     cursor: pointer;
     box-shadow: 4px 6px 6px rgba(0, 0, 0, 0.3); /* Adds shadow */
     transition: box-shadow 0.3s ease, transform 0.3s ease; 
+
 }
 
 .image-container {
@@ -58,6 +68,7 @@ h1 {
     justify-content:end; /* Center images horizontally */
     min-height: 96vh;
     flex-direction: column;
+
 }
 
 
@@ -88,15 +99,15 @@ button:hover {
     box-shadow: 0 8px 30px rgb(91, 9, 9);
 }
 
-button.touch {
-    box-shadow: 0 8px 30px rgb(0, 0, 0); /* Shadow for touch state */
+/* button.touch {
+    box-shadow: 0 8px 30px rgb(0, 0, 0); 
 }
-
+ */
 
 
 .move-left {
     transform: var(--transform);
-    opacity: 0;
+    opacity: 0.6;
     transition: opacity 2s ,transform 1.3s ease-in-out; /* Adds a smooth transition */
 }
 
