@@ -19,12 +19,9 @@ body{
 
 img {
     filter: brightness(50%); /* Make images darker */
-    transition: filter 0.3s; /* Smooth transition for the hover effect */
+    transition: filter 2.0s; /* Smooth transition for the hover effect */
 }
 
-img:hover {
-    filter: brightness(100%); /* Make images brighter on hover */
-}
 
 
 
@@ -97,7 +94,10 @@ button:hover {
 
 .lowerButton:hover {
     box-shadow: 0 8px 30px rgb(91, 9, 9);
+    
 }
+
+
 
 /* button.touch {
     box-shadow: 0 8px 30px rgb(0, 0, 0); 
