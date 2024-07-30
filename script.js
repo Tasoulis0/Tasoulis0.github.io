@@ -17,13 +17,13 @@ imageDiv.appendChild(AnImg2);
 
 
 
-if(screenWidth > 1040){
+if(screenWidth > 830){
     document.documentElement.style.setProperty('--transform', `translateX(-${(screenWidth/2.0) }px)`);
 }
 else{
     document.documentElement.style.setProperty('--transform', `translateY(-${(screenHeight/2.0)}px)`);
 
-    if(screenHeight - 2 * parseFloat(img1Comp.height) - 1.2* parseFloat(but1Comp.height) < 0){
+    if(screenHeight - 2 * parseFloat(img1Comp.height) - 1.4* parseFloat(but1Comp.height) < 0){
         document.documentElement.style.setProperty('--topForButtons', `${parseFloat(img1Comp.height) - parseFloat(but1Comp.height) - 5 }px`);
         document.getElementById("buttonDiv").style.position = 'relative';
         document.getElementById("buttonDiv").style.justifyContent = 'end';
@@ -32,7 +32,7 @@ else{
 
 }
 
-console.log(screenHeight - 2 * parseFloat(img1Comp.height) - 1.2*parseFloat(but1Comp.height));
+console.log(screenHeight - 2 * parseFloat(img1Comp.height) - 1.5*parseFloat(but1Comp.height));
 console.log(screenHeight );
 
 
@@ -95,6 +95,12 @@ document.getElementById("button1").addEventListener("click", function() {
        
 });
 
+window.addEventListener('resize', function() {
+    
+
+    window.location.reload(); 
+    
+});
 
 
 // function brightenImages() {
