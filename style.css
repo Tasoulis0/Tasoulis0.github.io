@@ -1,5 +1,6 @@
 :root {
     --transform: translateX(-100px); /* Moves the button 100px to the left */
+    --topForButtons: 0px;
 }
 
 * {
@@ -59,22 +60,45 @@ h1 {
     margin-bottom: 0; /* Remove bottom margin */
 }
 
+
+.image-container > div {
+    position: relative; /* Ensure h2 is positioned relative to this div */
+    flex: 1; /* Allow div to grow and fill available space */
+    height: 100%; /* Full height of the container */
+    display: flex; /* Flex container for the img */
+    justify-content: center; /* Center img horizontally */
+    align-items:start; /* Center img vertically */
+}
+
+.image-container h2 {
+    position: absolute;
+    top: 10px;
+    margin: 0;
+    padding: 0;
+    color: white; /* Optional: for better visibility */
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background */
+}
+
+
+
 .buttons-container{
+    position: static;
     display: flex;
-    align-items:center;
-    justify-content:end; /* Center images horizontally */
     min-height: 96vh;
+    top: var(--topForButtons);
+
+    align-items:center;
+    justify-content:end; 
+    
     flex-direction: column;
 
 }
-
 
 .myImg {
     width: 100%; /* Ensure images fit the full width of the container */
     height: 100%; /* Ensure images fit the full height of the container */
     object-fit: fill; /* Fill the entire area, allowing distortion */
-    margin: 5px;
-    
+      
 }
 
 #result {
@@ -111,8 +135,10 @@ button:hover {
     transition: opacity 2s ,transform 1.3s ease-in-out; /* Adds a smooth transition */
 }
 
+
 /* Media query for smaller screens */
-@media (max-width: 800px) {
+@media (max-width: 1040px) {
+
     .image-container {
         flex-direction: column; /* Stack images vertically */
         align-items: center; /* Center images */
@@ -124,4 +150,10 @@ button:hover {
         height: auto; /* Ensure images maintain aspect ratio */
         object-fit: fill; /* Fill the entire area, allowing distortion */
     }
+
+    
+    
 }
+
+
+

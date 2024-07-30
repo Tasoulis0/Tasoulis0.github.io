@@ -1,5 +1,12 @@
 const screenWidth = window.innerWidth;
 const screenHeight = window.innerHeight;
+
+const img1 = document.getElementById("image1");
+const img1Comp = getComputedStyle(img1);
+
+const but1 = document.getElementById("button1");
+const but1Comp = getComputedStyle(but1);
+
 const imageDiv = document.getElementById('ImagesDiv');
 var AnImg1 = document.createElement('img');
 imageDiv.appendChild(AnImg1);
@@ -9,60 +16,58 @@ var AnImg2 = document.createElement('img');
 imageDiv.appendChild(AnImg2);
 
 
-function createImg(path , element){
 
-    AnImg1.src = path ;
-    AnImg1.classList.add('Myimg');
-   
-    AnImg1.style.position = 'absolute';
-    const computedStyle = getComputedStyle(element);
-   
-    AnImg1.style.width = computedStyle.width ;
-    AnImg1.style.height = computedStyle.height ;
+if(screenWidth > 1040){
+    document.documentElement.style.setProperty('--transform', `translateX(-${(screenWidth/2.0) }px)`);
+}
+else{
+    document.documentElement.style.setProperty('--transform', `translateY(-${(screenHeight/2.0)}px)`);
 
-    const rect = element.getBoundingClientRect();
-    const containerRect = imageDiv.getBoundingClientRect();
-    AnImg1.style.top = (rect.top - containerRect.top) + 'px';
-    AnImg1.style.left = (rect.left - containerRect.left) + 'px';
+    if(screenHeight - 2 * parseFloat(img1Comp.height) - 1.2* parseFloat(but1Comp.height) < 0){
+        document.documentElement.style.setProperty('--topForButtons', `${parseFloat(img1Comp.height) - parseFloat(but1Comp.height) - 5 }px`);
+        document.getElementById("buttonDiv").style.position = 'relative';
+        document.getElementById("buttonDiv").style.justifyContent = 'end';
+        document.getElementById("buttonDiv").style.minHeight = '0';
+    }
 
 }
 
-function createImg2(path , element){
+console.log(screenHeight - 2 * parseFloat(img1Comp.height) - 1.2*parseFloat(but1Comp.height));
+console.log(screenHeight );
 
-    AnImg2.src = path ;
-    AnImg2.classList.add('Myimg');
-    
-    AnImg2.style.position = 'absolute';
+
+
+function createImg(imgElem , path , element,mode){
+
+    imgElem.src = path ;
+    imgElem.classList.add('Myimg');
+   
+    imgElem.style.position = 'absolute';
     const computedStyle = getComputedStyle(element);
    
-    AnImg2.style.width = computedStyle.width ;
-    AnImg2.style.height = computedStyle.height ;
+    imgElem.style.width = computedStyle.width ;
+    imgElem.style.height = computedStyle.height ;
 
     const rect = element.getBoundingClientRect();
     const containerRect = imageDiv.getBoundingClientRect();
-    AnImg2.style.top = (rect.top - containerRect.top) + 'px';
-    AnImg2.style.left = `${screenWidth}` + 'px';
+    imgElem.style.top = (rect.top - containerRect.top) + 'px';
 
+    if(mode){
+        imgElem.style.left = (rect.left - containerRect.left) + 'px';
+    }
+    else{
+        imgElem.style.left = `${screenWidth}` + 'px';
+    }
 }
-
-
 
 document.getElementById("button1").addEventListener("click", function() {
 
     result.textContent = ` screen-width:${screenWidth} screen-height:${screenHeight}   `;
     
-    if(screenWidth > 800){
-        document.documentElement.style.setProperty('--transform', `translateX(-${(screenWidth/2.0) }px)`);
-    }
-    else{
-        document.documentElement.style.setProperty('--transform', `translateY(-${(screenHeight/2.0)}px)`);
-    }
     
-    createImg(document.getElementById('image2').src , document.getElementById('image2'));
+    createImg(AnImg1,document.getElementById('image2').src , document.getElementById('image2'),true);
 
-
-    createImg2(document.getElementById('image1').src , document.getElementById('image2'));
-
+    createImg(AnImg2,document.getElementById('image1').src , document.getElementById('image2'),false);
 
     console.log(AnImg1);
     console.log(AnImg2);
