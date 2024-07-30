@@ -1,8 +1,18 @@
 const screenWidth = window.innerWidth;
 const screenHeight = window.innerHeight;
 
+//------------------------------------------------------
 const img1 = document.getElementById("image1");
 const img1Comp = getComputedStyle(img1);
+
+const img2 = document.getElementById("image2");
+const img2Comp = getComputedStyle(img2);
+
+const img1Rect = img1.getBoundingClientRect();
+const img2Rect = img2.getBoundingClientRect();
+
+//------------------------------------------------------
+
 
 const but1 = document.getElementById("button1");
 const but1Comp = getComputedStyle(but1);
@@ -15,13 +25,13 @@ imageDiv.appendChild(AnImg1);
 var AnImg2 = document.createElement('img');
 imageDiv.appendChild(AnImg2);
 
+const LayoutWidth = 830;
 
-
-if(screenWidth > 830){
+if(screenWidth > LayoutWidth){ //ORIZONTIO 
     document.documentElement.style.setProperty('--transform', `translateX(-${(screenWidth/2.0) }px)`);
 }
 else{
-    document.documentElement.style.setProperty('--transform', `translateY(-${(screenHeight/2.0)}px)`);
+    document.documentElement.style.setProperty('--transform', `translateY(-${ img2Rect.top - img1Rect.top }px)`);
 
     if(screenHeight - 2 * parseFloat(img1Comp.height) - 1.4* parseFloat(but1Comp.height) < 0){
         document.documentElement.style.setProperty('--topForButtons', `${parseFloat(img1Comp.height) - parseFloat(but1Comp.height) - 5 }px`);
@@ -31,7 +41,7 @@ else{
     }
 
 }
-
+console.log(parseFloat(img2Rect.top) - parseFloat(img1Rect.top))
 console.log(screenHeight - 2 * parseFloat(img1Comp.height) - 1.5*parseFloat(but1Comp.height));
 console.log(screenHeight );
 
@@ -52,11 +62,17 @@ function createImg(imgElem , path , element,mode){
     const containerRect = imageDiv.getBoundingClientRect();
     imgElem.style.top = (rect.top - containerRect.top) + 'px';
 
-    if(mode){
+    if(mode){ //8A TOPO*ETISEI TIN ANIMATION IMAGE STIN THESI TIN IMAGE2 
         imgElem.style.left = (rect.left - containerRect.left) + 'px';
     }
     else{
+        if(screenWidth > LayoutWidth ){
         imgElem.style.left = `${screenWidth}` + 'px';
+
+        }
+        else{
+            imgElem.style.top = `${2*parseFloat(img1Comp.height)}px` ;
+        }
     }
 }
 
