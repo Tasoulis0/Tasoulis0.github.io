@@ -119,29 +119,29 @@ window.addEventListener('resize', function() {
 });
 
 
-// function brightenImages() {
-//     image2.style.filter = 'brightness(100%)';
-//     newImg.style.filter = 'brightness(100%)';
-// }
+function brightenImages() {
+    image2.style.filter = 'brightness(100%)';
+    newImg.style.filter = 'brightness(100%)';
+}
 
-// // Function to restore image brightness
-// function darkenImages() {
-//     image2.style.filter = 'brightness(50%)';
-//     newImg.style.filter = 'brightness(50%)';
-// }
+// Function to restore image brightness
+function darkenImages() {
+    image2.style.filter = 'brightness(50%)';
+    newImg.style.filter = 'brightness(50%)';
+}
 
-// // Add event listeners to buttons
-// var buttons = document.getElementsByClassName('higherButton');
+// Add event listeners to buttons
+var button1 = document.getElementsByClassName('higherButton');
 
-// // Iterate over the HTMLCollection and add event listeners
-// Array.from(buttons).forEach(button => {
-//     button.addEventListener('mouseover', () =>{ image2.style.filter = 'brightness(100%)';} );
-//     button.addEventListener('mouseout', () =>{ image2.style.filter = 'brightness(60%)';});
-// });
+// Iterate over the HTMLCollection and add event listeners
+Array.from(button1).forEach(button => {
+    button.addEventListener('mouseover', () =>{ img2.style.filter = 'brightness(100%)'; AnImg1.style.filter = 'brightness(100%)';} );
+    button.addEventListener('mouseout', () =>{ img2.style.filter = 'brightness(60%)'; AnImg1.style.filter = 'brightness(60%)';});
+});
 
 
-// buttons  = document.getElementsByClassName('lowerButton');
-// Array.from(buttons).forEach(button => {
-//     button.addEventListener('mouseover', brightenImages);
-//     button.addEventListener('mouseout', darkenImages);
-// });
+var button2  = document.getElementsByClassName('lowerButton');
+Array.from(button2).forEach(button => {
+    button.addEventListener('mouseover', () =>{ img1.style.filter = 'brightness(100%)'; AnImg2.style.filter = 'brightness(100%)';});
+    button.addEventListener('mouseout',  () =>{ img1.style.filter = 'brightness(60%)';  AnImg2.style.filter = 'brightness(60%)';});
+});
