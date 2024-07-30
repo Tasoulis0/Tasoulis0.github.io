@@ -28,12 +28,13 @@ img {
 
  button {
 
-    padding: 4vh 8vw; /* Padding adjusts based on viewport size */
-    font-size: 5vw;   /* Font size adjusts based on viewport width */
+    padding: 3vh 6vw; /* Padding adjusts based on viewport size */
+    font-size: 4vw;   /* Font size adjusts based on viewport width */
+
+    min-width: 300px;
     margin-bottom: 10px;
     font-weight: bolder;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background: linear-gradient(to left, #450e7c, #1f0b6e);
     color: white;
     border: none;
     border-radius: 10px; /* Makes the button round */
