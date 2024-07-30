@@ -111,12 +111,12 @@ document.getElementById("button1").addEventListener("click", function() {
        
 });
 
-window.addEventListener('resize', function() {
+// window.addEventListener('resize', function() {
     
 
-    window.location.reload(); 
+//     window.location.reload(); 
     
-});
+// });
 
 
 function brightenImages() {
