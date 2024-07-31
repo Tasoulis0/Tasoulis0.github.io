@@ -127,6 +127,14 @@ button:hover {
     transition: opacity 2s ,transform 1.3s ease-in-out; /* Adds a smooth transition */
 }
 
+@keyframes redraw {
+    0% { opacity: 0.99; }
+    100% { opacity: 1; }
+}
+
+.image-edge-fix {
+    animation: redraw 1s linear;
+}
 
 /* Media query for smaller screens */
 @media (max-width: 830px) {
