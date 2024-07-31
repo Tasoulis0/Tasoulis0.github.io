@@ -1,7 +1,8 @@
 const screenWidth = window.innerWidth;
 const screenHeight = window.innerHeight;
+const LayoutWidth = 830;
 
-//------------------------------------------------------
+//----------------------IMAGE-ELEMENTS----------------------------
 const img1 = document.getElementById("image1");
 const img1Comp = getComputedStyle(img1);
 
@@ -11,22 +12,21 @@ const img2Comp = getComputedStyle(img2);
 const img1Rect = img1.getBoundingClientRect();
 const img2Rect = img2.getBoundingClientRect();
 
-//------------------------------------------------------
+const imageDiv = document.getElementById('ImagesDiv');
 
+var AnImg1 = document.createElement('img');
+imageDiv.appendChild(AnImg1);
+var AnImg2 = document.createElement('img');
+imageDiv.appendChild(AnImg2);
+//------------------------------------------------------
 
 const but1 = document.getElementById("button1");
 const but1Comp = getComputedStyle(but1);
 
-const imageDiv = document.getElementById('ImagesDiv');
-var AnImg1 = document.createElement('img');
-imageDiv.appendChild(AnImg1);
+//------------------------------------------------------
 
 
-var AnImg2 = document.createElement('img');
-imageDiv.appendChild(AnImg2);
-
-const LayoutWidth = 830;
-
+/*ASSIGNMENT OF CSS VARIABLES*/ 
 if(screenWidth > LayoutWidth){ //ORIZONTIO 
     document.documentElement.style.setProperty('--transform', `translateX(-${(screenWidth/2.0) }px)`);
 }
@@ -41,34 +41,38 @@ else{
     }
 
 }
+
+
+/*TODELETE */
 console.log(parseFloat(img2Rect.top) - parseFloat(img1Rect.top))
 console.log(screenHeight - 2 * parseFloat(img1Comp.height) - 1.5*parseFloat(but1Comp.height));
 console.log(screenHeight );
 
 
-
-function createImg(imgElem , path , element,mode){
+/*SETS THE GIVEN IMAGE ELEMENT POSITION TO THE GIVEN IMAGE ELEMENT POSITION AND CHANGES SRC 
+    PARAMETERS:() */
+function createImg(imgElem , path , position_element , mode){
 
     imgElem.src = path ;
     imgElem.classList.add('Myimg');
    
     imgElem.style.position = 'absolute';
-    const computedStyle = getComputedStyle(element);
+    const computedStyle = getComputedStyle(position_element);
    
     imgElem.style.width = computedStyle.width ;
     imgElem.style.height = computedStyle.height ;
 
-    const rect = element.getBoundingClientRect();
+    const rect = position_element.getBoundingClientRect();
     const containerRect = imageDiv.getBoundingClientRect();
     imgElem.style.top = (rect.top - containerRect.top) + 'px';
 
-    if(mode){ //8A TOPO*ETISEI TIN ANIMATION IMAGE STIN THESI TIN IMAGE2 
+    if(mode){ //START POSITION OF ANIMATION IMAGE1 SET TO IMAGE2
         imgElem.style.left = (rect.left - containerRect.left) + 'px';
     }
-    else{
+    else{   //START POSITION OF ANIMATION IMAGE2 SET TO THE EDGE OF THE SCREEN
+
         if(screenWidth > LayoutWidth ){
         imgElem.style.left = `${screenWidth}` + 'px';
-
         }
         else{
             imgElem.style.top = `${2*parseFloat(img1Comp.height)}px` ;
@@ -106,7 +110,7 @@ document.getElementById("button1").addEventListener("click", function() {
         document.getElementById("image2").style.opacity = '1';
         
 
-    }, 1000); // Delay in milliseconds (2000 ms = 2 seconds)
+    }, 1300); // Delay in milliseconds (2000 ms = 2 seconds)
     
        
 });
