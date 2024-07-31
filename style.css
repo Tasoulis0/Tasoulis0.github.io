@@ -14,7 +14,7 @@ body{
     text-align: center;
     margin: 0px;
     padding: 0px;
-    background: linear-gradient(to left, #380984, #0c0238);
+    background: linear-gradient(to left, #36333a, #0a022c);
     overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
@@ -57,7 +57,10 @@ img {
     overflow: hidden; /* Prevent overflow */
 }
 h1 {
-    margin-bottom: 0; /* Remove bottom margin */
+    margin-bottom: 5; /* Remove bottom margin */
+    color: aliceblue;
+    background-color: rgba(43, 37, 48, 0.7);
+    
 }
 
 
@@ -92,7 +95,7 @@ h1 {
     justify-content:end; 
     
     flex-direction: column;
-    background-color: transparent; /* Ensure transparency */
+    
 }
 
 .myImg {
@@ -124,17 +127,9 @@ button:hover {
 
 .move-image{
     transform: var(--transform);
-    transition: opacity 2s ,transform 1.3s ease-in-out; /* Adds a smooth transition */
+    transition:transform 1.3s ease-in-out; /* Adds a smooth transition */
 }
 
-@keyframes redraw {
-    0% { opacity: 0.99; }
-    100% { opacity: 1; }
-}
-
-.image-edge-fix {
-    animation: redraw 1s linear;
-}
 
 /* Media query for smaller screens */
 @media (max-width: 830px) {

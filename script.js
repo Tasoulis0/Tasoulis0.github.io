@@ -1,6 +1,30 @@
+
+let data = [
+    {
+        name: "ΑΓΙΑ ΦΩΤΕΙΝΗ",
+        num: 200,
+        link: "./files/AgiaF.jpg"
+    },
+    {
+        name: "ΑΝΩ ΜΕΡΩΣ",
+        num: 100,
+        link: "./files/AnoM.jpg"
+    },
+    {
+        name: "TASOS",
+        num: 500,
+        link: "./files/tasos.png"
+    }
+];
+
 const screenWidth = window.innerWidth;
 const screenHeight = window.innerHeight;
 const LayoutWidth = 830;
+const maxIndex = data.length - 1;
+
+var score = 0;
+var x = -1;
+var y = -1;
 
 //----------------------IMAGE-ELEMENTS----------------------------
 const img1 = document.getElementById("image1");
@@ -16,12 +40,22 @@ const imageDiv = document.getElementById('ImagesDiv');
 
 var AnImg1 = document.createElement('img');
 imageDiv.appendChild(AnImg1);
+
 var AnImg2 = document.createElement('img');
 imageDiv.appendChild(AnImg2);
 //------------------------------------------------------
 
 const but1 = document.getElementById("button1");
 const but1Comp = getComputedStyle(but1);
+
+document.getElementById('button1').addEventListener('click', handleButtonClick);
+document.getElementById('button2').addEventListener('click', handleButtonClick);
+
+//------------------------------------------------------
+const text1 = document.getElementById("text1");
+const text2= document.getElementById("text2");
+const scoreText = document.getElementById("score");
+
 
 //------------------------------------------------------
 
@@ -41,13 +75,6 @@ else{
     }
 
 }
-
-
-/*TODELETE */
-console.log(parseFloat(img2Rect.top) - parseFloat(img1Rect.top))
-console.log(screenHeight - 2 * parseFloat(img1Comp.height) - 1.5*parseFloat(but1Comp.height));
-console.log(screenHeight );
-
 
 /*SETS THE GIVEN IMAGE ELEMENT POSITION TO THE GIVEN IMAGE ELEMENT POSITION AND CHANGES SRC 
     PARAMETERS:() */
@@ -80,40 +107,129 @@ function createImg(imgElem , path , position_element , mode){
     }
 }
 
-document.getElementById("button1").addEventListener("click", function() {
+function getRandomInt(min, max) {
+    min = Math.ceil(min); // Round up to ensure min is inclusive
+    max = Math.floor(max); // Round down to ensure max is inclusive
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
-    result.textContent = ` screen-width:${screenWidth} screen-height:${screenHeight}   `;
+function findNext(stay,change){
+
+    var prev = change;
+
+    change = getRandomInt(0,maxIndex);
+
+    while(stay === change || prev == change){
+
+        change = getRandomInt(0,maxIndex);
+    }
+    return change;
+}
+
+
+function setStart(){
+
+
+    x = getRandomInt(0,maxIndex);
+    y = findNext(x,y);
+
+    img1.src = data[x].link;
+    img2.src = data[y].link;
+
+    text1.innerText = data[x].num + " ΚΑΤΟΙΚΟΙ";
+    text2.innerText = data[y].num + " ΚΑΤΟΙΚΟΙ";
+
+}
+function lose(){
+
+    console.log("YOU LOST");
+
+}
+
+
+setStart();
+
+
+var pressed = false;
+
+function handleButtonClick(event) {
+
+    var tmp;
     
-    
-    createImg(AnImg1,document.getElementById('image2').src , document.getElementById('image2'),true);
-
-    createImg(AnImg2,document.getElementById('image1').src , document.getElementById('image2'),false);
-
-    console.log(AnImg1);
-    console.log(AnImg2);
+    if(pressed){
+        return;
+    }
+    pressed  = true;
 
 
-    document.getElementById("image2").style.opacity = '0';
+    if (event.target.id === 'button1') {
+        console.log('Button 1 was clicked');
+        if(data[x].num >= data[y].num){
+            score +=1;
+        }
+        else{
+            lose();
+            return;
+
+        }
+    } else if (event.target.id === 'button2') {
+        console.log('Button 2 was clicked');
+
+        if(data[y].num >= data[x].num){
+            score +=1;
+        }
+        else{
+            lose();
+            return;
+
+        }
+       
+    }
+
+    scoreText.innerText = "🎯SCORE : "+ `${score}`+" 🎯"
+
+
+    createImg(AnImg1 , data[y].link , document.getElementById('image2'),true);
+
+    x = findNext(y,x);
+
+    createImg(AnImg2 , data[x].link , document.getElementById('image2'),false);
+
+    tmp = x;
+    x = y;
+    y = tmp;
+
 
     AnImg1.classList.add("move-image");
     AnImg2.classList.add("move-image");
 
+    AnImg1.style.opacity = '1';
+    AnImg2.style.opacity = '1';
 
-
+    
     setTimeout(() => {
         
-        document.getElementById("image1").src = "./files/AnoM.jpg";
+        img1.src = data[x].link;
+        img2.src = data[y].link;
+
+        text1.innerText = data[x].num + " ΚΑΤΟΙΚΟΙ";
+        text2.innerText = data[y].num + " ΚΑΤΟΙΚΟΙ";
+        
+
+
         AnImg1.style.opacity = '0';
         AnImg2.style.opacity = '0';
 
-        document.getElementById("image2").src = "./files/AgiaF.jpg";
-        document.getElementById("image2").style.opacity = '1';
-        
+        AnImg1.classList.remove("move-image");
+        AnImg2.classList.remove("move-image");
 
+        pressed = false;    
     }, 1300); // Delay in milliseconds (2000 ms = 2 seconds)
     
        
-});
+}
+
+
 
 // window.addEventListener('resize', function() {
     
@@ -121,18 +237,6 @@ document.getElementById("button1").addEventListener("click", function() {
 //     window.location.reload(); 
     
 // });
-
-
-function brightenImages() {
-    image2.style.filter = 'brightness(100%)';
-    newImg.style.filter = 'brightness(100%)';
-}
-
-// Function to restore image brightness
-function darkenImages() {
-    image2.style.filter = 'brightness(50%)';
-    newImg.style.filter = 'brightness(50%)';
-}
 
 // Add event listeners to buttons
 var button1 = document.getElementsByClassName('higherButton');
@@ -149,3 +253,4 @@ Array.from(button2).forEach(button => {
     button.addEventListener('mouseover', () =>{ img1.style.filter = 'brightness(100%)'; AnImg2.style.filter = 'brightness(100%)';});
     button.addEventListener('mouseout',  () =>{ img1.style.filter = 'brightness(60%)';  AnImg2.style.filter = 'brightness(60%)';});
 });
+
