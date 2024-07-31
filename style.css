@@ -92,7 +92,7 @@ h1 {
     justify-content:end; 
     
     flex-direction: column;
-
+    background-color: transparent; /* Ensure transparency */
 }
 
 .myImg {
