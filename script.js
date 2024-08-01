@@ -346,7 +346,7 @@ setStart();
 
 
 var pressed = false;
-
+var lost = false;
 function handleButtonClick(event) {
 
     var tmp;
@@ -363,8 +363,7 @@ function handleButtonClick(event) {
             score +=1;
         }
         else{
-            lose();
-            return;
+            lost = true;
 
         }
     } else if (event.target.id === 'button2') {
@@ -374,8 +373,7 @@ function handleButtonClick(event) {
             score +=1;
         }
         else{
-            lose();
-            return;
+            lost = true;
         }
     }
 
@@ -386,6 +384,11 @@ function handleButtonClick(event) {
            
     
     setTimeout(() => {
+
+        if(lost){
+            lose();
+            return;
+        }
 
         createImg(AnImg1 , data[y].link , document.getElementById('image2'),true);
 
