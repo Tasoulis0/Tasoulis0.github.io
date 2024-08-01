@@ -247,7 +247,6 @@ const text1 = document.getElementById("text1");
 const text2= document.getElementById("text2");
 const scoreText = document.getElementById("score");
 
-
 //------------------------------------------------------
 
 var test = 0;
@@ -299,7 +298,7 @@ function createImg(imgElem , path , position_element , mode){
         imgElem.style.left = `${screenWidth}` + 'px';
         }
         else{
-            imgElem.style.top = `${2*parseFloat(img1Comp.height)}px` ;
+            imgElem.style.top = `${parseFloat(img1Comp.height) + parseFloat(img2Comp.height) }px` ;
         }
     }
 }
