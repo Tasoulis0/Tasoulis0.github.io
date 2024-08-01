@@ -1,21 +1,208 @@
 
 let data = [
     {
-        name: "ΑΓΙΑ ΦΩΤΕΙΝΗ",
-        num: 200,
+        name: "Αγία Παρασκευή",
+        num: 78,
+        link: "./files/AgiaP.jpg"
+    },
+    {
+        name: "Αγία Φωτεινή",
+        num: 104,
         link: "./files/AgiaF.jpg"
     },
     {
-        name: "ΑΝΩ ΜΕΡΩΣ",
-        num: 100,
+        name: "Άγιος Ιωάννης",
+        num: 97,
+        link: "./files/AgiosI.jpg"
+    },
+    {
+        name: "Νέφς Αμάρι",
+        num: 164,
+        link: "./files/NefsA.jpg"
+    },
+    {
+        name: "Άνω Μέρος",
+        num: 280,
         link: "./files/AnoM.jpg"
     },
     {
-        name: "TASOS",
-        num: 500,
-        link: "./files/tasos.png"
+        name: "Αποδούλου",
+        num: 216,
+        link: "./files/Apodoulou.jpg"
+    },
+    {
+        name: "Απόστολοι",
+        num: 184,
+        link: "./files/Apostoloi.jpg"
+    },
+    {
+        name: "Άρδακτος",
+        num: 27,
+        link: "./files/Ardaktos.jpg"
+    },
+    {
+        name: "Βαθιακό",
+        num: 15,
+        link: "./files/Bathiako.jpg"
+    },
+    {
+        name: "Βιζάρι",
+        num: 67,
+        link: "./files/Bizari.jpg"
+    },
+    {
+        name: "Βισταγή",
+        num: 219,
+        link: "./files/Bistagi.jpg"
+    },
+    {
+        name: "Βολιώνες",
+        num: 181,
+        link: "./files/Boliones.jpg"
+    },
+    {
+        name: "Βρύσες",
+        num: 94,
+        link: "./files/Brises.jpg"
+    },
+    {
+        name: "Γέννα",
+        num: 29,
+        link: "./files/Genna.jpg"
+    },
+    {
+        name: "Γερακάρι",
+        num: 355,
+        link: "./files/Gerakari.jpg"
+    },
+    {
+        name: "Γουργούθοι",
+        num: 1,
+        link: "./files/Gourgouthi.jpg"
+    },
+    {
+        name: "Δρυγιές",
+        num: 27,
+        link: "./files/Drigies.jpg"
+    },
+    {
+        name: "Ελένες",
+        num: 57,
+        link: "./files/Elenes.jpg"
+    },
+    {
+        name: "Θρόνος",
+        num: 60,
+        link: "./files/Thronos.jpg"
+    },
+    {
+        name: "Καλογέρου",
+        num: 127,
+        link: "./files/Kalogerou.jpg"
+    },
+    {
+        name: "Καρδάκι",
+        num: 38,
+        link: "./files/Kardaki.jpg"
+    },
+    {
+        name: "Κλησίδι",
+        num: 26,
+        link: "./files/Klisidi.jpg"
+    },
+    {
+        name: "Κουρούτες",
+        num: 238,
+        link: "./files/Kouroutes.jpg"
+    },
+    {
+        name: "Λαμπιώτες",
+        num: 70,
+        link: "./files/Lampiotes.jpg"
+    },
+    {
+        name: "Λοχριά",
+        num: 214,
+        link: "./files/Loxria.jpg"
+    },
+    {
+        name: "Μέρωνας",
+        num: 340,
+        link: "./files/Meronas.jpg"
+    },
+    {
+        name: "Μεσονήσια",
+        num: 111,
+        link: "./files/Mesonisia.jpg"
+    },
+    {
+        name: "Μοναστηράκι",
+        num: 164,
+        link: "./files/Monastiraki.jpg"
+    },
+    {
+        name: "Νίθαυρη",
+        num: 312,
+        link: "./files/Nithabri.jpg"
+    },
+    {
+        name: "Οψιγιάς",
+        num: 25,
+        link: "./files/Opsigias.jpg"
+    },
+    {
+        name: "Παντάνασσα",
+        num: 168,
+        link: "./files/Pantanassa.jpg"
+    },
+    {
+        name: "Πατσός",
+        num: 228,
+        link: "./files/Patsos.jpg"
+    },
+    {
+        name: "Πετροχώρι",
+        num: 92,
+        link: "./files/Petroxori.jpg"
+    },
+    {
+        name: "Πλατάνια",
+        num: 218,
+        link: "./files/Platania.jpg"
+    },
+    {
+        name: "Πλάτανος",
+        num: 384,
+        link: "./files/Platanos.jpg"
+    },
+    {
+        name: "Ρίζικας",
+        num: 2,
+        link: "./files/Rizikas.jpg"
+    },
+    {
+        name: "Σάτα",
+        num: 13,
+        link: "./files/Sata.jpg"
+    },
+    {
+        name: "Σχολή Ασωμάτων",
+        num: 21,
+        link: "./files/SxoliA.jpg"
+    },
+    {
+        name: "Φουρφουράς",
+        num: 513,
+        link: "./files/Fourfouras.jpg"
+    },
+    {
+        name: "Χωρδάκι",
+        num: 5,
+        link: "./files/Xordaki.jpg"
     }
 ];
+
+// mandres 8 
 
 const screenWidth = window.innerWidth;
 const screenHeight = window.innerHeight;
@@ -119,7 +306,7 @@ function findNext(stay,change){
 
     change = getRandomInt(0,maxIndex);
 
-    while(stay === change || prev == change){
+    while(stay === change || prev === change){
 
         change = getRandomInt(0,maxIndex);
     }
@@ -129,15 +316,14 @@ function findNext(stay,change){
 
 function setStart(){
 
-
     x = getRandomInt(0,maxIndex);
     y = findNext(x,y);
 
     img1.src = data[x].link;
     img2.src = data[y].link;
 
-    text1.innerText = data[x].num + " ΚΑΤΟΙΚΟΙ";
-    text2.innerText = data[y].num + " ΚΑΤΟΙΚΟΙ";
+    text1.innerText = data[x].name +"\n" + data[x].num + " ΚΑΤΟΙΚΟΙ";
+    text2.innerText = data[y].name +"\n" + data[y].num + " ΚΑΤΟΙΚΟΙ";
 
 }
 function lose(){
@@ -145,7 +331,6 @@ function lose(){
     console.log("YOU LOST");
 
 }
-
 
 setStart();
 
@@ -181,9 +366,7 @@ function handleButtonClick(event) {
         else{
             lose();
             return;
-
         }
-       
     }
 
     scoreText.innerText = "🎯SCORE : "+ `${score}`+" 🎯"
@@ -199,7 +382,6 @@ function handleButtonClick(event) {
     x = y;
     y = tmp;
 
-
     AnImg1.classList.add("move-image");
     AnImg2.classList.add("move-image");
 
@@ -212,8 +394,8 @@ function handleButtonClick(event) {
         img1.src = data[x].link;
         img2.src = data[y].link;
 
-        text1.innerText = data[x].num + " ΚΑΤΟΙΚΟΙ";
-        text2.innerText = data[y].num + " ΚΑΤΟΙΚΟΙ";
+    text1.innerText = data[x].name +"\n" + data[x].num + " ΚΑΤΟΙΚΟΙ";
+    text2.innerText = data[y].name +"\n" + data[y].num + " ΚΑΤΟΙΚΟΙ";
         
 
 
@@ -243,14 +425,14 @@ var button1 = document.getElementsByClassName('higherButton');
 
 // Iterate over the HTMLCollection and add event listeners
 Array.from(button1).forEach(button => {
-    button.addEventListener('mouseover', () =>{ img2.style.filter = 'brightness(100%)'; AnImg1.style.filter = 'brightness(100%)';} );
-    button.addEventListener('mouseout', () =>{ img2.style.filter = 'brightness(60%)'; AnImg1.style.filter = 'brightness(60%)';});
+    button.addEventListener('mouseover', () =>{ img1.style.filter = 'brightness(100%)'; AnImg2.style.filter = 'brightness(100%)';} );
+    button.addEventListener('mouseout', () =>{ img1.style.filter = 'brightness(60%)'; AnImg2.style.filter = 'brightness(60%)';});
 });
 
 
 var button2  = document.getElementsByClassName('lowerButton');
 Array.from(button2).forEach(button => {
-    button.addEventListener('mouseover', () =>{ img1.style.filter = 'brightness(100%)'; AnImg2.style.filter = 'brightness(100%)';});
-    button.addEventListener('mouseout',  () =>{ img1.style.filter = 'brightness(60%)';  AnImg2.style.filter = 'brightness(60%)';});
+    button.addEventListener('mouseover', () =>{ img2.style.filter = 'brightness(100%)'; AnImg1.style.filter = 'brightness(100%)';});
+    button.addEventListener('mouseout',  () =>{ img2.style.filter = 'brightness(60%)';  AnImg1.style.filter = 'brightness(60%)';});
 });
 
