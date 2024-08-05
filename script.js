@@ -283,13 +283,26 @@ const result = document.getElementById('lose');
 document.getElementById('button1').addEventListener('click', handleButtonClick);
 document.getElementById('button2').addEventListener('click', handleButtonClick);
 
+
 //------------------------------------------------------
 const text1 = document.getElementById("text1");
 const text2= document.getElementById("text2");
 const scoreText = document.getElementById("score");
 
 //------------------------------------------------------
-var test = 0;
+
+function toggleLead(){
+
+    document.getElementById("leaderboard").style.display = "block";
+    leadState = 1;
+    const actionButton = document.getElementById('leaderboardButton');
+    actionButton.disabled = true;
+
+    actionButton.style.transform = 'none';
+    actionButton.style.cursor = 'default';
+    
+    
+}
 
 
 /*ASSIGNMENT OF CSS VARIABLES*/ 
@@ -452,7 +465,61 @@ function handleButtonClick(event) {
     },800); 
 }
 
-function lose(){
+
+
+document.getElementById('form').addEventListener('submit',async function(event) {
+    event.preventDefault(); // Prevent the default form submission
+    var username = document.getElementById('nickname').value;
+    
+    await fetch(`https://wh.al3xandros.eu/hooks/brd-update?username=${username}&score=${score}`)
+    
+    location.reload();
+    
+});
+
+
+async function fetchData() {
+    try {
+        const response = await fetch("https://wh.al3xandros.eu/hooks/brd");
+        const data = await response.text();
+        return data;
+
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+const dataList = document.getElementById('leaderboard');
+
+// Function to create list items from the array and append them to the list
+function populateList(array) {
+
+    var count = 0;
+
+    const pos = ['🥇','🥈','🥉','🏅','🏅','🏅','🏅','🏅','🏅','🏅'];
+
+    array.forEach(item => {
+        // Create a new <li> element
+        const listItem = document.createElement('li');
+        count+=1;
+
+        if (count > 10){
+            return;
+        }
+        
+        // Set the text of the <li> element to the item
+
+        var tmp = item.split(",");
+
+        listItem.textContent = `${pos[count-1]} `+" " +tmp[0] + "  /  "  + tmp[1];
+        
+        // Append the <li> element to the <ul> element
+        dataList.appendChild(listItem);
+    });
+}
+
+
+async function lose(){
 
     imageDiv.style.display = 'none';
     buttonDiv.style.display = 'none';
@@ -463,11 +530,41 @@ function lose(){
  
     document.getElementById("resultID").textContent = "🎯SCORE : " + `${score}`+" 🎯"; 
 
-    if(true){
+    var data = await fetchData();
+
+    data = data.split("\n");
+
+    populateList(data);
+
+    var dataLen = data.length;
+
+    console.log(dataLen);
+
+    if(dataLen > 10){
+        
+        if(score > parseInt( data[9].split(',')[0]) ){
+
+            document.getElementById("form").style.display = 'block';
+            console.log("ANTIKATASTISE");
+
+            document.getElementById("resultID").innerText = "HIGH SCORE !! \n " + "🎯SCORE : " + `${score}`+" 🎯";
+            document.body.style.background = 'green';
+
+        }
+    }
+    else{
+        document.getElementById("form").style.display = 'block';
+
+            document.body.style.background = 'green';
+            document.getElementById("resultID").innerText = "HIGH SCORE !! \n " + "🎯SCORE : " + `${score}`+" 🎯";
+
+            console.log("insert");
 
     }
 
 }
+
+
 
 document.getElementById('playAgain').addEventListener('click', function() {
     location.reload(); // Refreshes the page

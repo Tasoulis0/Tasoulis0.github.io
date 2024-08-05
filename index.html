@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[AMARI] Higher or Lower </title>
+    <title> Higher/Lower Amari :) </title>
+    <link rel="icon" href="./files/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-    <div id="lose" class="lose_container" style="display: none; align-items:center; justify-content: center; min-height: 90vh;">
+    <div id="lose" class="lose-container" style="display: none; align-items:center; justify-content: center; min-height: 90vh;">
 
-        <h1 id="resultID" style="color: white;"> ΕΧΑΣΕΣ !!!</h1>
+        <h1 id="resultID" style="color: white;"> </h1>
         <br>
-        <button id="playAgain" style="background-color: #6d0505; color: white; width: 50%;">Play Again</button>
+        <button id="playAgain" style="background-color: #6d0505; color: white; ">Play Again</button>
 
-        <form action="submit_nickname" method="POST" style="margin-top: 10%; display: none;" >
-            <input type="text" id="nickname" name="nickname" placeholder="nickname" required>
-            <input type="submit" value="Submit">
+        <button id="leaderboardButton" onclick="toggleLead()" style="background: linear-gradient(to left, #abbe02, #a16100);">🏆<b> LeaderBoards </b>🏆</button>
+        
+        <ol id="leaderboard" style="display: none;; width: 50%; "> </ol>
+
+
+        <form id="form" method="get" style="margin-top:10px; display: none;" >
+
+            <input type="text" id="nickname" name="nickname" placeholder="Enter Nickname " required>
+            <input id="submitButton" type="submit" value="Submit">
+
         </form>
 
     </div>
