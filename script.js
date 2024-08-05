@@ -532,6 +532,7 @@ async function lose(){
 
     var data = await fetchData();
 
+    data = data.trim();
     data = data.split("\n");
 
     populateList(data);
@@ -547,7 +548,7 @@ async function lose(){
             document.getElementById("form").style.display = 'block';
             console.log("ANTIKATASTISE");
 
-            document.getElementById("resultID").innerText = "HIGH SCORE !! \n " + "🎯SCORE : " + `${score}`+" 🎯";
+            document.getElementById("resultID").innerText = "!! HIGH SCORE !! \n " + "🎯SCORE : " + `${score}`+" 🎯";
             document.body.style.background = 'green';
 
         }
@@ -556,7 +557,7 @@ async function lose(){
         document.getElementById("form").style.display = 'block';
 
             document.body.style.background = 'green';
-            document.getElementById("resultID").innerText = "HIGH SCORE !! \n " + "🎯SCORE : " + `${score}`+" 🎯";
+            document.getElementById("resultID").innerText = "!! HIGH SCORE !! \n " + "🎯SCORE : " + `${score}`+" 🎯";
 
             console.log("insert");
 
