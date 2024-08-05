@@ -73,7 +73,7 @@ h1 {
     align-items:start; /* Center img vertically */
 }
 
-.image-container h3 {
+.image-container h2 {
     text-align: center;
     position: absolute;
     top: 40%;
@@ -143,11 +143,47 @@ button:hover {
         width: 100vw; /* Ensure images fit the full width of the viewport */
         height: auto; /* Ensure images maintain aspect ratio */
         object-fit: fill; /* Fill the entire area, allowing distortion */
-    }
-
-    
-    
+    } 
 }
 
 
+.lose_container {
+    padding: 20px;
+    text-align: center;
+}
 
+
+input[type="text"] {
+
+    padding: 2vh 1vw; /* Padding adjusts based on viewport size */
+    font-size: 2vw;   /* Font size adjusts based on viewport width */
+
+    min-width: 300px;
+    margin-bottom: 10px;
+   
+    border-radius: 50px;
+    
+}
+input[type="submit"] {
+    padding: 2vh 4vw; /* Padding adjusts based on viewport size */
+    font-size: 2vw;   /* Font size adjusts based on viewport width */
+
+    min-width: 300px;
+    margin-bottom: 10px;
+    font-weight: bolder;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    background-color: #2e7130;
+
+    border: none;
+    border-radius: 50px; /* Makes the button round */
+    cursor: pointer;
+    box-shadow: 4px 6px 6px rgba(0, 0, 0, 0.3); /* Adds shadow */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; 
+
+
+
+}
+input[type="submit"]:hover {
+    box-shadow: 0 8px 30px rgb(0, 0, 0);
+}

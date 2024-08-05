@@ -3,202 +3,242 @@ let data = [
     {
         name: "Αγία Παρασκευή",
         num: 78,
-        link: "./files/AgiaP.jpg"
+        link: "./files/AgiaP.jpg",
+        pre: "Η"
     },
     {
         name: "Αγία Φωτεινή",
         num: 104,
-        link: "./files/AgiaF.jpg"
+        link: "./files/AgiaF.jpg",
+        pre: "Η"
     },
     {
         name: "Άγιος Ιωάννης",
         num: 97,
-        link: "./files/AgiosI.jpg"
+        link: "./files/AgiosI.jpg",
+        pre: "Ο"
     },
     {
         name: "Νέφς Αμάρι",
         num: 164,
-        link: "./files/NefsA.jpg"
+        link: "./files/NefsA.jpg",
+        pre: "Το"
     },
     {
         name: "Άνω Μέρος",
         num: 280,
-        link: "./files/AnoM.jpg"
+        link: "./files/AnoM.jpg",
+        pre: "Το"
     },
     {
         name: "Αποδούλου",
         num: 216,
-        link: "./files/Apodoulou.jpg"
+        link: "./files/Apodoulou.jpg",
+        pre: "Το"
     },
     {
         name: "Απόστολοι",
         num: 184,
-        link: "./files/Apostoloi.jpg"
+        link: "./files/Apostoloi.jpg",
+        pre: "Οι"
     },
     {
         name: "Άρδακτος",
         num: 27,
-        link: "./files/Ardaktos.jpg"
+        link: "./files/Ardaktos.jpg",
+        pre: "Η"
     },
     {
         name: "Βαθιακό",
         num: 15,
-        link: "./files/Bathiako.jpg"
+        link: "./files/Bathiako.jpg",
+        pre: "Το"
     },
     {
         name: "Βιζάρι",
         num: 67,
-        link: "./files/Bizari.jpg"
+        link: "./files/Bizari.jpg",
+        pre: "Το"
     },
     {
         name: "Βισταγή",
         num: 219,
-        link: "./files/Bistagi.jpg"
+        link: "./files/Bistagi.jpg",
+        pre: "Η"
     },
     {
         name: "Βολιώνες",
         num: 181,
-        link: "./files/Boliones.jpg"
+        link: "./files/Boliones.jpg",
+        pre: "Οι"
     },
     {
         name: "Βρύσες",
         num: 94,
-        link: "./files/Brises.jpg"
+        link: "./files/Brises.jpg",
+        pre: "Οι"
     },
     {
         name: "Γέννα",
         num: 29,
-        link: "./files/Genna.jpg"
+        link: "./files/Genna.jpg",
+        pre: "Η"
     },
     {
         name: "Γερακάρι",
         num: 355,
-        link: "./files/Gerakari.jpg"
+        link: "./files/Gerakari.jpg",
+        pre: "Το"
     },
     {
         name: "Γουργούθοι",
         num: 1,
-        link: "./files/Gourgouthi.jpg"
+        link: "./files/Gourgouthi.jpg",
+        pre: "Οι"
     },
     {
         name: "Δρυγιές",
         num: 27,
-        link: "./files/Drigies.jpg"
+        link: "./files/Drigies.jpg",
+        pre: "Οι"
     },
     {
         name: "Ελένες",
         num: 57,
-        link: "./files/Elenes.jpg"
+        link: "./files/Elenes.jpg",
+        pre: "Οι"
     },
     {
         name: "Θρόνος",
         num: 60,
-        link: "./files/Thronos.jpg"
+        link: "./files/Thronos.jpg",
+        pre: "Το"
     },
     {
         name: "Καλογέρου",
         num: 127,
-        link: "./files/Kalogerou.jpg"
+        link: "./files/Kalogerou.jpg",
+        pre: "Το"
     },
     {
         name: "Καρδάκι",
         num: 38,
-        link: "./files/Kardaki.jpg"
+        link: "./files/Kardaki.jpg",
+        pre: "Το"
     },
     {
         name: "Κλησίδι",
         num: 26,
-        link: "./files/Klisidi.jpg"
+        link: "./files/Klisidi.jpg",
+        pre: "Το"
     },
     {
         name: "Κουρούτες",
         num: 238,
-        link: "./files/Kouroutes.jpg"
+        link: "./files/Kouroutes.jpg",
+        pre: "Οι"
     },
     {
         name: "Λαμπιώτες",
         num: 70,
-        link: "./files/Lampiotes.jpg"
+        link: "./files/Lampiotes.jpg",
+        pre: "Οι"
     },
     {
         name: "Λοχριά",
         num: 214,
-        link: "./files/Loxria.jpg"
+        link: "./files/Loxria.jpg",
+        pre: "Η"
     },
     {
         name: "Μέρωνας",
         num: 340,
-        link: "./files/Meronas.jpg"
+        link: "./files/Meronas.jpg",
+        pre: "Ο"
     },
     {
         name: "Μεσονήσια",
         num: 111,
-        link: "./files/Mesonisia.jpg"
+        link: "./files/Mesonisia.jpg",
+        pre: "Τα"
     },
     {
         name: "Μοναστηράκι",
         num: 164,
-        link: "./files/Monastiraki.jpg"
+        link: "./files/Monastiraki.jpg",
+        pre: "Το"
     },
     {
         name: "Νίθαυρη",
         num: 312,
-        link: "./files/Nithabri.jpg"
+        link: "./files/Nithabri.jpg",
+        pre: "Η"
     },
     {
         name: "Οψιγιάς",
         num: 25,
-        link: "./files/Opsigias.jpg"
+        link: "./files/Opsigias.jpg",
+        pre: "Ο"
     },
     {
         name: "Παντάνασσα",
         num: 168,
-        link: "./files/Pantanassa.jpg"
+        link: "./files/Pantanassa.jpg",
+        pre: "Η"
     },
     {
         name: "Πατσός",
         num: 228,
-        link: "./files/Patsos.jpg"
+        link: "./files/Patsos.jpg",
+        pre: "Η"
     },
     {
         name: "Πετροχώρι",
         num: 92,
-        link: "./files/Petroxori.jpg"
+        link: "./files/Petroxori.jpg",
+        pre: "Το"
     },
     {
         name: "Πλατάνια",
         num: 218,
-        link: "./files/Platania.jpg"
+        link: "./files/Platania.jpg",
+        pre: "Τα"
     },
     {
         name: "Πλάτανος",
         num: 384,
-        link: "./files/Platanos.jpg"
+        link: "./files/Platanos.jpg",
+        pre: "Ο"
     },
     {
         name: "Ρίζικας",
         num: 2,
-        link: "./files/Rizikas.jpg"
+        link: "./files/Rizikas.jpg",
+        pre: "Ο"
     },
     {
         name: "Σάτα",
         num: 13,
-        link: "./files/Sata.jpg"
+        link: "./files/Sata.jpg",
+        pre: "Η"
     },
     {
         name: "Σχολή Ασωμάτων",
         num: 21,
-        link: "./files/SxoliA.jpg"
+        link: "./files/SxoliA.jpg",
+        pre: "Η"
     },
     {
         name: "Φουρφουράς",
         num: 513,
-        link: "./files/Fourfouras.jpg"
+        link: "./files/Fourfouras.jpg",
+        pre: "Ο"
     },
     {
         name: "Χωρδάκι",
         num: 5,
-        link: "./files/Xordaki.jpg"
+        link: "./files/Xordaki.jpg",
+        pre: "Το"
     }
 ];
 
@@ -236,6 +276,7 @@ const but1 = document.getElementById("button1");
 const but1Comp = getComputedStyle(but1);
 
 const buttonDiv = document.getElementById('buttonDiv');
+//------------------------------------------------------
 
 const result = document.getElementById('lose');
 
@@ -248,9 +289,7 @@ const text2= document.getElementById("text2");
 const scoreText = document.getElementById("score");
 
 //------------------------------------------------------
-
 var test = 0;
-
 
 
 /*ASSIGNMENT OF CSS VARIABLES*/ 
@@ -260,11 +299,9 @@ if(screenWidth > LayoutWidth){ //ORIZONTIO
 else{
     document.documentElement.style.setProperty('--transform', `translateY(-${ img2Rect.top - img1Rect.top }px)`);
 
-    if(screenHeight - 2 * parseFloat(img1Comp.height) - 1.4* parseFloat(but1Comp.height) < 0){
+    if(screenHeight - (parseFloat(img1Comp.height) + parseFloat(img2Comp.height)) - 1.4* parseFloat(but1Comp.height) < 0){ // IF BUTTONS DIV DOESN'T HAVE ENOUGH SPACE MOVE IT INBETWEEN IMGS
 
-        console.log("mpika");
-
-        document.documentElement.style.setProperty('--topForButtons', `${parseFloat(img1Comp.height) - parseFloat(but1Comp.height) - 5 }px`);
+        document.documentElement.style.setProperty('--topForButtons', `${parseFloat(img1Comp.height) - parseFloat(but1Comp.height) - 10 }px`);
         document.getElementById("buttonDiv").style.position = 'relative';
         document.getElementById("buttonDiv").style.justifyContent = 'center';
         document.getElementById("buttonDiv").style.minHeight = '0';
@@ -331,15 +368,10 @@ function setStart(){
     img1.src = data[x].link;
     img2.src = data[y].link;
 
-    text1.innerText = data[x].name +"\n" + data[x].num + " ΚΑΤΟΙΚΟΙ";
-    text2.innerText = data[y].name ;
-
+    text1.innerText = data[x].name +" \n" + data[x].num + " ΚΑΤΟΙΚΟΙ ";
+    text2.innerText = data[y].pre +" "+  data[y].name +" \n EINAI 🔼 ή 🔽 ?" ;
 }
-function lose(){
 
-    console.log("YOU LOST");
-
-}
 
 setStart();
 
@@ -355,20 +387,17 @@ function handleButtonClick(event) {
     }
     pressed  = true;
 
-
     if (event.target.id === 'button1') {
-        console.log('Button 1 was clicked');
-        if(data[x].num >= data[y].num){
+
+        if(data[x].num <= data[y].num){
             score +=1;
         }
         else{
             lost = true;
-
         }
     } else if (event.target.id === 'button2') {
-        console.log('Button 2 was clicked');
 
-        if(data[y].num >= data[x].num){
+        if(data[y].num <= data[x].num){
             score +=1;
         }
         else{
@@ -377,11 +406,8 @@ function handleButtonClick(event) {
     }
 
     scoreText.innerText = "🎯SCORE : "+ `${score}`+" 🎯"
-
-
-    text2.innerText = data[y].name +"\n" + data[y].num + " ΚΑΤΟΙΚΟΙ";
+    text2.innerText = data[y].name +"\n" + data[y].num + " ΚΑΤΟΙΚΟΙ ";
            
-    
     setTimeout(() => {
 
         if(lost){
@@ -412,7 +438,7 @@ function handleButtonClick(event) {
             img2.src = data[y].link;
 
             text1.innerText = data[x].name +"\n" + data[x].num + " ΚΑΤΟΙΚΟΙ";
-            text2.innerText = data[y].name ;
+            text2.innerText = data[y].pre +" "+  data[y].name +" \n EINAI 🔼 ή 🔽 ?" ;
             
             AnImg1.style.opacity = '0';
             AnImg2.style.opacity = '0';
@@ -434,12 +460,14 @@ function lose(){
 
     result.style.display = 'flex';
     result.style.flexDirection = "column";
+ 
+    document.getElementById("resultID").textContent = "🎯SCORE : " + `${score}`+" 🎯"; 
 
+    if(true){
 
-    document.getElementById("resultID").textContent = "SCORE : " + `${score}`; 
+    }
 
 }
-
 
 document.getElementById('playAgain').addEventListener('click', function() {
     location.reload(); // Refreshes the page
@@ -456,13 +484,12 @@ var button1 = document.getElementsByClassName('higherButton');
 
 // Iterate over the HTMLCollection and add event listeners
 Array.from(button1).forEach(button => {
-    button.addEventListener('mouseover', () =>{ img1.style.filter = 'brightness(100%)'; AnImg2.style.filter = 'brightness(100%)';} );
-    button.addEventListener('mouseout', () =>{ img1.style.filter = 'brightness(60%)'; AnImg2.style.filter = 'brightness(60%)';});
+    button.addEventListener('mouseover', () =>{ img2.style.filter = 'brightness(100%)'; AnImg1.style.filter = 'brightness(100%)';} );
+    button.addEventListener('mouseout', () =>{ img2.style.filter = 'brightness(60%)'; AnImg1.style.filter = 'brightness(60%)';});
 });
 
 var button2  = document.getElementsByClassName('lowerButton');
 Array.from(button2).forEach(button => {
-    button.addEventListener('mouseover', () =>{ img2.style.filter = 'brightness(100%)'; AnImg1.style.filter = 'brightness(100%)';});
-    button.addEventListener('mouseout',  () =>{ img2.style.filter = 'brightness(60%)';  AnImg1.style.filter = 'brightness(60%)';});
+    button.addEventListener('mouseover', () =>{ img1.style.filter = 'brightness(100%)'; AnImg2.style.filter = 'brightness(100%)';});
+    button.addEventListener('mouseout',  () =>{ img1.style.filter = 'brightness(60%)';  AnImg2.style.filter = 'brightness(60%)';});
 });
-

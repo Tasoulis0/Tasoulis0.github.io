@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test App</title>
+    <title>[AMARI] Higher or Lower </title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-    <div id="lose" style="display: none; align-items:center; justify-content: center; min-height: 90vh;">
+    <div id="lose" class="lose_container" style="display: none; align-items:center; justify-content: center; min-height: 90vh;">
 
         <h1 id="resultID" style="color: white;"> ΕΧΑΣΕΣ !!!</h1>
         <br>
         <button id="playAgain" style="background-color: #6d0505; color: white; width: 50%;">Play Again</button>
+
+        <form action="submit_nickname" method="POST" style="margin-top: 10%; display: none;" >
+            <input type="text" id="nickname" name="nickname" placeholder="nickname" required>
+            <input type="submit" value="Submit">
+        </form>
 
     </div>
 
@@ -20,12 +25,12 @@
 
         <div >
             <img alt="image1" src="./files/AgiaF.jpg" alt="Description of Image 1" id="image1" class="myImg">
-            <h3 id="text1"> TEST NAME KATOIKOI: 1000</h2>
+            <h2 id="text1"> </h2>
         </div>
 
         <div >
             <img alt="image2" src="./files/AnoM.jpg" alt="Description of Image 2" id="image2" class="myImg">
-            <h3 id="text2"> TEST NAME KATOIKOI: 10r3240</h2>
+            <h2 id="text2"> </h2>
         </div>
     </div>
 
