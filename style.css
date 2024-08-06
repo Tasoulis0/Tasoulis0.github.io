@@ -109,7 +109,7 @@ ol li {
 
 
 .buttons-container{
-   
+    
     display: flex;
     min-height: 96vh;
     top: var(--topForButtons);

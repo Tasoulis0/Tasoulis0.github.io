@@ -249,6 +249,9 @@ const screenHeight = window.innerHeight;
 const LayoutWidth = 830;
 const maxIndex = data.length - 1;
 
+
+
+
 var score = 0;
 var x = -1;
 var y = -1;
@@ -303,6 +306,7 @@ function toggleLead(){
     
     
 }
+
 
 
 /*ASSIGNMENT OF CSS VARIABLES*/ 
