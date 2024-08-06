@@ -501,9 +501,8 @@ function populateList(array) {
     array.forEach(item => {
         // Create a new <li> element
         const listItem = document.createElement('li');
-        count+=1;
-
-        if (count > 10){
+        
+        if (count >= 10){
             return;
         }
         
@@ -511,7 +510,9 @@ function populateList(array) {
 
         var tmp = item.split(",");
 
-        listItem.textContent = `${pos[count-1]} `+" " +tmp[0] + "  /  "  + tmp[1];
+        listItem.textContent = `${pos[count]} `+" " +tmp[1] + " Score :  "  + tmp[0] + `${pos[count]} ` ;
+        count+=1;
+
         
         // Append the <li> element to the <ul> element
         dataList.appendChild(listItem);
@@ -520,6 +521,14 @@ function populateList(array) {
 
 
 async function lose(){
+
+    var data = await fetchData();
+
+    data = data.trim();
+    data = data.split("\n");
+
+    populateList(data);
+
 
     imageDiv.style.display = 'none';
     buttonDiv.style.display = 'none';
@@ -530,37 +539,32 @@ async function lose(){
  
     document.getElementById("resultID").textContent = "🎯SCORE : " + `${score}`+" 🎯"; 
 
-    var data = await fetchData();
-
-    data = data.trim();
-    data = data.split("\n");
-
-    populateList(data);
+  
 
     var dataLen = data.length;
 
-    console.log(dataLen);
+    if(score === 0){
+        return;
+    }
 
     if(dataLen > 10){
         
         if(score > parseInt( data[9].split(',')[0]) ){
 
             document.getElementById("form").style.display = 'block';
-            console.log("ANTIKATASTISE");
 
             document.getElementById("resultID").innerText = "!! HIGH SCORE !! \n " + "🎯SCORE : " + `${score}`+" 🎯";
             document.body.style.background = 'green';
-
+            document.getElementById("playAgain").style.display = 'none';
         }
     }
     else{
         document.getElementById("form").style.display = 'block';
 
             document.body.style.background = 'green';
+            document.getElementById("playAgain").style.display = 'none';
+
             document.getElementById("resultID").innerText = "!! HIGH SCORE !! \n " + "🎯SCORE : " + `${score}`+" 🎯";
-
-            console.log("insert");
-
     }
 
 }

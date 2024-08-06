@@ -11,18 +11,18 @@
 
     <div id="lose" class="lose-container" style="display: none; align-items:center; justify-content: center; min-height: 90vh;">
 
-        <h1 id="resultID" style="color: white;"> </h1>
+        <h1 id="resultID" style="color: white; width: 100%;"> </h1>
         <br>
         <button id="playAgain" style="background-color: #6d0505; color: white; ">Play Again</button>
 
         <button id="leaderboardButton" onclick="toggleLead()" style="background: linear-gradient(to left, #abbe02, #a16100);">🏆<b> LeaderBoards </b>🏆</button>
         
-        <ol id="leaderboard" style="display: none;; width: 50%; "> </ol>
+        <ol id="leaderboard" > </ol>
 
 
         <form id="form" method="get" style="margin-top:10px; display: none;" >
 
-            <input type="text" id="nickname" name="nickname" placeholder="Enter Nickname " required>
+            <input type="text" id="nickname" name="nickname" maxlength="20" minlength="3" placeholder="Enter Nickname " required>
             <input id="submitButton" type="submit" value="Submit">
 
         </form>

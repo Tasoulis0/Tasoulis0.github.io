@@ -64,8 +64,13 @@ h1 {
 }
 
 ol {
-    font-size: 2vw;
+    font-size: clamp(16px, 3vw, 24px);
     list-style-type: none;
+
+    display: none;
+    min-width: 250px; 
+    width: 60%; 
+
     background: linear-gradient(to left, #abbe02, #a16100);
     border: 2px solid #333; /* Add a solid border with a thickness of 2px */
     border-radius: 50px; /* Round the corners with a radius of 10px */
@@ -76,6 +81,8 @@ ol {
 /* Optional: Additional styling for the list items */
 ol li {
     font-weight: bold; /* Make the text bold */
+    border-bottom: 2px solid #333; /* Add a solid border with a thickness of 2px */
+    border-radius: 5px; /* Round the corners with a radius of 10px */
     margin: 5px 0;
 }
 
@@ -170,8 +177,8 @@ button:hover {
 }
 
 .lose-container button {
-    padding: 3vh 4vw; /* Padding adjusts based on viewport size */
-    font-size: 3vw;   /* Font size adjusts based on viewport width */
+    padding: 3vh 6vw; /* Padding adjusts based on viewport size */
+    font-size: 4vw;   /* Font size adjusts based on viewport width */
 
     min-width: 300px;
     margin-bottom: 10px;
@@ -188,8 +195,8 @@ button:hover {
 
 input[type="text"] {
 
-    padding: 2vh 1vw; /* Padding adjusts based on viewport size */
-    font-size: 2vw;   /* Font size adjusts based on viewport width */
+    padding: 2vh 4vw; /* Padding adjusts based on viewport size */
+    font-size: 4vw;   /* Font size adjusts based on viewport width */
 
     min-width: 300px;
     margin-bottom: 10px;
@@ -199,7 +206,7 @@ input[type="text"] {
 }
 input[type="submit"] {
     padding: 2vh 4vw; /* Padding adjusts based on viewport size */
-    font-size: 2vw;   /* Font size adjusts based on viewport width */
+    font-size: 4vw;   /* Font size adjusts based on viewport width */
 
     min-width: 300px;
     margin-bottom: 10px;
