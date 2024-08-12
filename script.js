@@ -249,22 +249,19 @@ const screenHeight = window.innerHeight;
 const LayoutWidth = 830;
 const maxIndex = data.length - 1;
 
-
-
-
 var score = 0;
 var x = -1;
 var y = -1;
 
 //----------------------IMAGE-ELEMENTS----------------------------
 const img1 = document.getElementById("image1");
-const img1Comp = getComputedStyle(img1);
+var img1Comp = getComputedStyle(img1);
 
 const img2 = document.getElementById("image2");
-const img2Comp = getComputedStyle(img2);
+var img2Comp = getComputedStyle(img2);
 
-const img1Rect = img1.getBoundingClientRect();
-const img2Rect = img2.getBoundingClientRect();
+var img1Rect = img1.getBoundingClientRect();
+var img2Rect = img2.getBoundingClientRect();
 
 const imageDiv = document.getElementById('ImagesDiv');
 
@@ -303,27 +300,33 @@ function toggleLead(){
 
     actionButton.style.transform = 'none';
     actionButton.style.cursor = 'default';
-    
-    
+        
 }
-
-
 
 /*ASSIGNMENT OF CSS VARIABLES*/ 
-if(screenWidth > LayoutWidth){ //ORIZONTIO 
-    document.documentElement.style.setProperty('--transform', `translateX(-${(screenWidth/2.0) }px)`);
-}
-else{
-    document.documentElement.style.setProperty('--transform', `translateY(-${ img2Rect.top - img1Rect.top }px)`);
+function setTrasform(){
 
-    if(screenHeight - (parseFloat(img1Comp.height) + parseFloat(img2Comp.height)) - 1.4* parseFloat(but1Comp.height) < 0){ // IF BUTTONS DIV DOESN'T HAVE ENOUGH SPACE MOVE IT INBETWEEN IMGS
+    img1Comp = getComputedStyle(img1);
+    img2Comp = getComputedStyle(img2);
 
-        document.documentElement.style.setProperty('--topForButtons', `${parseFloat(img1Comp.height) - parseFloat(but1Comp.height) - 10 }px`);
-        document.getElementById("buttonDiv").style.position = 'relative';
-        document.getElementById("buttonDiv").style.justifyContent = 'center';
-        document.getElementById("buttonDiv").style.minHeight = '0';
+    img1Rect = img1.getBoundingClientRect();
+    img2Rect = img2.getBoundingClientRect();
+
+
+    if(screenWidth > LayoutWidth){ //ORIZONTIO 
+        document.documentElement.style.setProperty('--transform', `translateX(-${(screenWidth/2.0) }px)`);
     }
-
+    else{
+        document.documentElement.style.setProperty('--transform', `translateY(-${ img2Rect.top - img1Rect.top }px)`);
+    
+        if(screenHeight - (parseFloat(img1Comp.height) + parseFloat(img2Comp.height)) - 1.4* parseFloat(but1Comp.height) < 0){ // IF BUTTONS DIV DOESN'T HAVE ENOUGH SPACE MOVE IT INBETWEEN IMGS
+    
+            document.documentElement.style.setProperty('--topForButtons', `${parseFloat(img1Comp.height) - parseFloat(but1Comp.height) - 10 }px`);
+            document.getElementById("buttonDiv").style.position = 'relative';
+            document.getElementById("buttonDiv").style.justifyContent = 'center';
+            document.getElementById("buttonDiv").style.minHeight = '0';
+        }
+    }
 }
 
 /*SETS THE GIVEN IMAGE ELEMENT POSITION TO THE GIVEN IMAGE ELEMENT POSITION AND CHANGES SRC 
@@ -398,6 +401,7 @@ var lost = false;
 function handleButtonClick(event) {
 
     var tmp;
+    setTrasform();
     
     if(pressed){
         return;
@@ -478,11 +482,10 @@ document.getElementById('form').addEventListener('submit',async function(event) 
     await fetch(`https://wh.al3xandros.eu/hooks/brd-update?username=${username}&score=${score}`)
     
     location.reload();
-    
 });
 
 
-async function fetchData() {
+async function fetchData() { 
     try {
         const response = await fetch("https://wh.al3xandros.eu/hooks/brd");
         const data = await response.text();
@@ -490,6 +493,7 @@ async function fetchData() {
 
     } catch (error) {
         console.error(error);
+        return null;
     }
 }
 
@@ -511,28 +515,28 @@ function populateList(array) {
         }
         
         // Set the text of the <li> element to the item
-
         var tmp = item.split(",");
 
         listItem.textContent = `${pos[count]} `+" " +tmp[1] + " Score :  "  + tmp[0] + `${pos[count]} ` ;
         count+=1;
 
-        
         // Append the <li> element to the <ul> element
         dataList.appendChild(listItem);
     });
 }
 
-
 async function lose(){
 
     var data = await fetchData();
 
-    data = data.trim();
-    data = data.split("\n");
+    if(data != null){
 
-    populateList(data);
+        data = data.trim();
+        data = data.split("\n");
 
+        populateList(data);
+        var dataLen = data.length;
+    }
 
     imageDiv.style.display = 'none';
     buttonDiv.style.display = 'none';
@@ -542,10 +546,6 @@ async function lose(){
     result.style.flexDirection = "column";
  
     document.getElementById("resultID").textContent = "🎯SCORE : " + `${score}`+" 🎯"; 
-
-  
-
-    var dataLen = data.length;
 
     if(score === 0){
         return;
@@ -573,29 +573,21 @@ async function lose(){
 
 }
 
-
-
 document.getElementById('playAgain').addEventListener('click', function() {
     location.reload(); // Refreshes the page
 });
 
-
-
-// window.addEventListener('resize', function() {
-//     window.location.reload(); 
-// });
-
-// Add event listeners to buttons
+//-------------- Brightness Changes on Hover --------------------------------------------------------------
 var button1 = document.getElementsByClassName('higherButton');
+var button2  = document.getElementsByClassName('lowerButton');
 
-// Iterate over the HTMLCollection and add event listeners
 Array.from(button1).forEach(button => {
     button.addEventListener('mouseover', () =>{ img2.style.filter = 'brightness(100%)'; AnImg1.style.filter = 'brightness(100%)';} );
     button.addEventListener('mouseout', () =>{ img2.style.filter = 'brightness(60%)'; AnImg1.style.filter = 'brightness(60%)';});
 });
 
-var button2  = document.getElementsByClassName('lowerButton');
 Array.from(button2).forEach(button => {
     button.addEventListener('mouseover', () =>{ img1.style.filter = 'brightness(100%)'; AnImg2.style.filter = 'brightness(100%)';});
     button.addEventListener('mouseout',  () =>{ img1.style.filter = 'brightness(60%)';  AnImg2.style.filter = 'brightness(60%)';});
 });
+//------------------------------------------------------------------------------------------------------------
